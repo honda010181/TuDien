@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="TuDienVL.HomePage" %>
 <%@ MasterType VirtualPath="~/MasterPage.Master" %>
+
+
 <asp:Content ID="ContentSection" ContentPlaceHolderID="ContentSection" runat="server">
         <asp:ListView id="lvContent" runat="server" >
         <EditItemTemplate>
@@ -55,7 +57,7 @@
             <br /><br /></span>
         </InsertItemTemplate>
         <ItemTemplate>
-            <div class="container">
+            <div class="container" style="background-color:white">
                 <div class="row">
                     <asp:Label ID="wordLabel" runat="server" class ="def-word-header" Text='<%# Eval("word") %>' />
                 </div>
@@ -71,22 +73,20 @@
                 </div>
                 <br />
                 <div class="row">
-                    <span>
-                    <asp:Label ID="lbUserName" runat="server" class ="def-author" Text='<%# Eval("user_name") %>' />
-                    <asp:Label ID="last_mod_dateLabel" runat="server"  class ="def-created-date"  Text='<%# Eval("last_mod_date") %>' />
-                    </span>
-
-                </div>
-                <div class="row">
-                    <span>
-                        <asp:Image ID="imThumpUp" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" />
-                        <asp:Label ID="up_voteLabel" runat="server"  class="def-thumpUp"  Text='<%# Eval("up_vote") %>' />
-                        <asp:Image ID ="Image1" runat="server"  class="def-thumpUp"  ImageUrl="~/Image/thumpUp.png" />
-                        <asp:Label ID="down_voteLabel" runat="server"  class="def-thumpUp"  Text='<%# Eval("down_vote") %>' />
-                    </span>
+                    <div class="col-sm-4" style="padding:0px">
+                        <asp:Label ID="lbUserName" runat="server" class ="def-author" Text='<%# Eval("user_name") %>' />
+                        <asp:Label ID="last_mod_dateLabel" runat="server"  class ="def-created-date"  Text='<%# Eval("last_mod_date") %>' />
+                    </div>
+                    <div class="col-sm-4">
+                        <asp:Image ID="Image2" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" />
+                        <asp:Label ID="Label1" runat="server"  class="def-thumpUp"  Text='<%# Eval("up_vote") %>' />
+                        <asp:Image ID ="Image3" runat="server"  class="def-thumpUp"  ImageUrl="~/Image/thumpUp.png" />
+                        <asp:Label ID="Label2" runat="server"  class="def-thumpUp"  Text='<%# Eval("down_vote") %>' />                  
+                    </div>
 
                 </div>
             </div>
+            <div class="div-divider"></div>
         </ItemTemplate>
         <LayoutTemplate>
             <div id="itemPlaceholderContainer" runat="server" style="">
@@ -121,4 +121,7 @@
         </SelectedItemTemplate>
 
     </asp:ListView>
+
+
 </asp:Content>
+

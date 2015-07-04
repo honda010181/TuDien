@@ -16,10 +16,11 @@
     <link href="Content/Custom.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="StyleSection" runat="server" />
 </head>
-<body>
+<body class="container-fluid" style="background-color:#f1f1f1;" >
     <%--<form id="form1" runat="serve  r">--%>
     <div class="container" runat ="server">
-        <!-- Static navbar -->
+        <div id="Header" class="row" >
+       <!-- Static navbar -->
         <nav class="navbar navbar-inverse" runat ="server">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -51,19 +52,25 @@
               </span> 
              <asp:TextBox ID="tbSearch" runat="server"  class="form-control" ></asp:TextBox>
          </form>
-    </div>
-    <div  class="div-divider" >
-        <div class="container">
-                <asp:ContentPlaceHolder ID="ContentSection" runat="server">
-                </asp:ContentPlaceHolder>
-        
-            <asp:Label ID="lbMessage" runat="server"></asp:Label>
+
         </div>
+ 
+
+    <div  class="div-divider" >
+
     </div>
 
+    <div id="BodySection" class="row">
+       <asp:ContentPlaceHolder ID="ContentSection" runat="server">
+           </asp:ContentPlaceHolder>
+       <asp:Label ID="lbMessage" runat="server"></asp:Label>
+    </div>
     <!-- /container -->
     <%-- Script Section --%>
     <asp:ContentPlaceHolder ID="BodyResult" runat="server" />
     <%--</form>--%>
+
+    </div>
+
 </body>
 </html>
