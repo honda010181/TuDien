@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="TuDienVL.MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <title>Từ Điển VL</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sample page to include Bootstrap and Web API to Asp.Net forms application.">
+    <meta name="author" content="Sree">
+    <%-- Bootstrap core CSS --%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Custom.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="StyleSection" runat="server" />
+</head>
+<body>
+    <%--<form id="form1" runat="server">--%>
+    <div class="container" runat ="server">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-inverse" runat ="server">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+              </button>
+              <a class="navbar-brand" href="#">Từ Điển VL</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li> 
+                <li><a href="#">Page 3</a></li> 
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Content Page Section -->
+         <form class="input-group" id ="inputGroup" runat="server">              
+              <span class="input-group-btn" runat ="server">
+                  <asp:Button id="btnSearch" class="btn btn-default" style="width:80px;" runat="server"  Text="Tìm Kiếm"/>                 
+              </span> 
+             <asp:TextBox ID="tbSearch" runat="server"  class="form-control" ></asp:TextBox>
+         </form>
+    </div>
+    <div  class="div-divider" >
+        <div class="container">
+                <asp:ContentPlaceHolder ID="ContentSection" runat="server">
+                </asp:ContentPlaceHolder>
+        
+            <asp:Label ID="lbMessage" runat="server"></asp:Label>
+        </div>
+    </div>
+
+    <!-- /container -->
+    <%-- Script Section --%>
+    <asp:ContentPlaceHolder ID="BodyResult" runat="server" />
+    <%--</form>--%>
+</body>
+</html>
