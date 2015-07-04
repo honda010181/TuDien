@@ -17,7 +17,7 @@
     <asp:ContentPlaceHolder ID="StyleSection" runat="server" />
 </head>
 <body>
-    <%--<form id="form1" runat="server">--%>
+    <%--<form id="form1" runat="serve  r">--%>
     <div class="container" runat ="server">
         <!-- Static navbar -->
         <nav class="navbar navbar-inverse" runat ="server">
