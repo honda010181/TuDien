@@ -1,5 +1,17 @@
-﻿.div-divider{
+﻿body.custom{
+    background-color:dimgrey;
+}
+.div-divider{
     margin-top:20px;
+}
+.div-divider2{
+    margin-top:40px;
+}
+.div-dividera{
+    margin-top:60px;
+}
+.div-divider4{
+    margin-top:80px;
 }
 .def-panel {
   border-style: solid;
@@ -42,4 +54,7 @@
   border-image-width: 10px;
   height:20px;
   width:20px;
+}
+.def-userPanel{
+  background: #FFFFFF;
 }
