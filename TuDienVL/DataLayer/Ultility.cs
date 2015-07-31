@@ -29,17 +29,29 @@ namespace TuDienVL
         public static DataTable Search(String searchTerm)
         {
             DataSet ds = new DataSet();
+            try
+            {
+               
+                String procedureName = "search";
+                SqlConnection con = CreateConnection();
+                SqlCommand command = new SqlCommand(procedureName, con);
+                command.CommandType = CommandType.StoredProcedure;
 
-            String procedureName = "search";
-            SqlConnection con = CreateConnection();
-            SqlCommand command = new SqlCommand(procedureName, con);
-            command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@arg_keyword", SqlDbType.NVarChar).Value = searchTerm;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(ds, "Table");
+                con.Close();
+            }
+            catch (Exception ex)
+            {
 
-            command.Parameters.Add("@arg_keyword", SqlDbType.NVarChar).Value = searchTerm;
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            adapter.Fill(ds, "Table");
+            }
+            finally
+            { 
+            }
 
             return ds.Tables[0];
+            
         }
     }
 }

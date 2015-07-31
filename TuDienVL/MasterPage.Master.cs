@@ -29,5 +29,12 @@ namespace TuDienVL
                 return tbSearch.Text;
             }
         }
+        public ContentPlaceHolder UserPanel
+        {
+            get
+            {
+                return UserMangementPanel;
+            }
+        }
     }
 }

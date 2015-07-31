@@ -7,90 +7,102 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TuDienVL {
+namespace TuDienVL.User {
     
     
-    public partial class MasterPage {
+    public partial class Register {
         
         /// <summary>
-        /// Head1 control.
+        /// lbUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.WebControls.Label lbUserName;
         
         /// <summary>
-        /// StyleSection control.
+        /// tbUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder StyleSection;
+        protected global::System.Web.UI.WebControls.TextBox tbUserName;
         
         /// <summary>
-        /// inputGroup control.
+        /// lbPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm inputGroup;
+        protected global::System.Web.UI.WebControls.Label lbPassword;
         
         /// <summary>
-        /// btnSearch control.
+        /// tbPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.TextBox tbPassword;
         
         /// <summary>
-        /// tbSearch control.
+        /// lbConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbSearch;
+        protected global::System.Web.UI.WebControls.Label lbConfirmPassword;
         
         /// <summary>
-        /// UserMangementPanel control.
+        /// tbConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder UserMangementPanel;
+        protected global::System.Web.UI.WebControls.TextBox tbConfirmPassword;
         
         /// <summary>
-        /// ContentSection control.
+        /// lbEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentSection;
+        protected global::System.Web.UI.WebControls.Label lbEmail;
         
         /// <summary>
-        /// lbMessage control.
+        /// tbEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMessage;
+        protected global::System.Web.UI.WebControls.TextBox tbEmail;
         
         /// <summary>
-        /// BodyResult control.
+        /// btnSumit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder BodyResult;
+        protected global::System.Web.UI.WebControls.Button btnSumit;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new TuDienVL.MasterPage Master {
+            get {
+                return ((TuDienVL.MasterPage)(base.Master));
+            }
+        }
     }
 }
