@@ -57,22 +57,22 @@
             <br /><br /></span>
         </InsertItemTemplate>
         <ItemTemplate>
-            <div class="container" style="background-color:white">
-                <div class="row">
+            <div style="background-color:white; margin-left:0px">
+                <div class="row" style="padding-left:15px">
                     <asp:Label ID="wordLabel" runat="server" class ="def-word-header" Text='<%# Eval("word") %>' />
                 </div>
-                <div class="row">
+                <div class="row" style="padding-left:15px">
                     Từ loại: <asp:Label ID="tu_loai_codeLabel" runat="server" Text='<%# Eval("tu_loai_code") %>' />
                 </div>
-                <div class="row">
+                <div class="row" style="padding-left:15px">
                     Định nghĩa: <asp:Label ID="lbDefinition" runat="server" Text='<%# Eval("definition") %>' />
                 </div>
-                <div class="row">
+                <div class="row" style="padding-left:15px">
                     Cách dùng:
                     <asp:Label ID="lbExample" runat="server" Text='<%# Eval("example") %>' />
                 </div>
                 <br />
-                <div class="row">
+                <div class="row" style="padding-left:15px">
                     <div class="col-sm-4" style="padding:0px">
                         <asp:Label ID="lbUserName" runat="server" class ="def-author" Text='<%# Eval("user_name") %>' />
                         <asp:Label ID="last_mod_dateLabel" runat="server"  class ="def-created-date"  Text='<%# Eval("last_mod_date") %>' />

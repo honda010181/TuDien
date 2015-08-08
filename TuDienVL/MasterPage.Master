@@ -29,7 +29,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span> 
               </button>
-              <a class="navbar-brand" href="#">My website</a>
+              <a class="navbar-brand" href="/Homepage.aspx">My website</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
@@ -39,7 +39,7 @@
                 <li><a href="#">Page 3</a></li> 
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/User/Register.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               </ul>
             </div>
@@ -47,11 +47,10 @@
         </nav>
         <!-- Content Page Section -->
         
-            <form class="input-group" id ="inputGroup" runat="server">      
-                <div class="container-fluid">
+            <form class="container-fl" id ="inputGroup" runat="server">      
                      <div class="row">
                          <div class="col-sm-1" style="padding-left:0px;">
-                            <asp:Button id="btnSearch" class="btn btn-default" style="width:90px; padding-left:0px; margin-left:0px;" runat="server"  Text="Tìm Kiếm"/>     
+                            <asp:Button id="btnSearch" class="btn btn-default" style="width:90px; padding-left:0px; margin-left:0px;" runat="server"  Text="Search"/>     
                          </div>
                          <div class="col-sm-11" style ="margin-left:0px;">
                             <asp:TextBox ID="tbSearch" runat="server"  class="form-control" ></asp:TextBox>
@@ -60,12 +59,17 @@
                     <div  class="div-divider" >
 
                     </div>
-                     <div class="row" >
-                        <asp:ContentPlaceHolder ID="UserMangementPanel" runat="server">
-                        </asp:ContentPlaceHolder>  
+                     <div class="custom-row" >
+                         <div class="col-sm-9" style="padding:0px">
+                            <asp:ContentPlaceHolder ID="UserMangementPanel" runat="server">
+                            </asp:ContentPlaceHolder> 
+                         </div>
+                         <div class="col-sm-3">
+
+                         </div>
                      </div>
 
-                </div>       
+      
              </form>
         </div>
     <div  class="div-divider" >

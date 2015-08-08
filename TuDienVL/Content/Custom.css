@@ -58,3 +58,7 @@
 .def-userPanel{
   background: #FFFFFF;
 }
+.custom-row {
+  margin-right: 0px;
+  margin-left:  0px;
+}

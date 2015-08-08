@@ -29,6 +29,9 @@
 
     <div  style="margin-top:20px;padding-top:60px; background-color:white" >
        <div class="container">
+           <asp:Label ID="lbErrorMessage" runat="server" Visible="false" ForeColor="Red" >
+
+           </asp:Label>
            <div class="div-divider" style="margin-top:50px"/> 
             <div id="UserName" class ="row">
                 <span>
@@ -62,7 +65,7 @@
             </div>  
            <div class="div-divider"/>    
             <div id="btnSubmit" class ="row">
-                <asp:Button ID="btnSumit" runat="server"  class="def-submitButton"  Text="Đăng Kí" Height="33px" Width="85px" OnClick="btn_register" />  
+                <asp:Button ID="btnSumit" runat="server"  class="def-submitButton"  Text="Submit" Height="33px" Width="85px" OnClick="btn_register" />  
             </div>  
          </div>
      </div>
