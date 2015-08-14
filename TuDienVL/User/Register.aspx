@@ -1,9 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TuDienVL.User.Register" %>
 <%@ MasterType VirtualPath="~/MasterPage.Master" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="StyleSection" runat="server">
-</asp:Content>
-<asp:Content ID="RegisterPanel" ContentPlaceHolderID="UserMangementPanel" runat="server">
+<asp:Content ID="RegisterPanel" ContentPlaceHolderID="Body" runat="server">
  <style type="text/css">
     .def-padding{
         padding-left:20px;
@@ -27,48 +24,51 @@
 
 </style>
 
-    <div  style="margin-top:20px;padding-top:60px; background-color:white" >
-       <div class="container">
-           <asp:Label ID="lbErrorMessage" runat="server" Visible="false" ForeColor="Red" >
+        <div class="col-sm-5">
 
-           </asp:Label>
-           <div class="div-divider" style="margin-top:50px"/> 
-            <div id="UserName" class ="row">
-                <span>
-                    <asp:Label ID="lbUserName" runat="server"  Text="User Name"  CssClass="def-padding"/>
-                    <asp:TextBox ID="tbUserName" runat="server"  style="margin-left:55px" />
-                </span>
+            <div class="row">
+                       <div class="row">
+                            <asp:Label ID="lbErrorMessage" runat="server" Visible="false" ForeColor="Red" ></asp:Label>
+                       </div>
+
+
+                        <div id="UserName" class ="row">
+                            <span>
+                                <asp:Label ID="lbUserName" runat="server"  Text="User Name"  CssClass="def-padding"/>
+                                <asp:TextBox ID="tbUserName" runat="server" class="form-control" placeholder="User Name"/>
+ 
+                            </span>
+                        </div>
+ 
+                        <div id="Password" class ="row">
+                            <span>
+                                <asp:Label ID="lbPassword" runat="server"  Text="Password" CssClass="def-padding"/>
+                                <asp:TextBox ID="tbPassword" runat="server" class="form-control" placeholder="Password"/>
+                            </span>  
+                        </div>
+
+                        <div id="ConfirmPassword" class ="row">
+                            <span>
+                                <asp:Label ID="lbConfirmPassword" runat="server"  Text="Confirm Password"  CssClass="def-padding"/>
+                                <asp:TextBox ID="tbConfirmPassword" runat="server" class="form-control" placeholder="Confirm Password"/>
+                            </span>
+                        </div>  
+
+                        <div id="Email" class ="row">
+                            <span>
+                                <asp:Label ID="lbEmail" runat="server"  Text="Email"  CssClass="def-padding"/>
+                                <asp:TextBox ID="tbEmail" runat="server"   class="form-control" placeholder="Email"/>
+                            </span>  
+                        </div>  
+
+                        <div id="btnSubmit" class ="row">
+                            <asp:Button ID="btnSumit" runat="server"  class="def-submitButton"  Text="Submit" Height="33px" Width="85px" OnClick="btn_register" />  
+                        </div>  
+
+
+
             </div>
-           <div class="div-divider"/> 
-           <div class="div-divider"/> 
-            <div id="Password" class ="row">
-                <span>
-                    <asp:Label ID="lbPassword" runat="server"  Text="Password" CssClass="def-padding"/>
-                    <asp:TextBox ID="tbPassword" runat="server" style="margin-left:64px"  />
-                </span>  
-            </div>
-           <div class="div-divider"/> 
-           <div class="div-divider"/>   
-            <div id="ConfirmPassword" class ="row">
-                <span>
-                    <asp:Label ID="lbConfirmPassword" runat="server"  Text="Confirm Password"  CssClass="def-padding"/>
-                    <asp:TextBox ID="tbConfirmPassword" runat="server"  style="margin-left:10px" />
-                </span>  
-            </div>  
-           <div class="div-divider"/> 
-           <div class="div-divider"/> 
-            <div id="Email" class ="row">
-                <span>
-                    <asp:Label ID="lbEmail" runat="server"  Text="Email"  CssClass="def-padding"/>
-                    <asp:TextBox ID="tbEmail" runat="server"   style="margin-left:90px" />
-                </span>  
-            </div>  
-           <div class="div-divider"/>    
-            <div id="btnSubmit" class ="row">
-                <asp:Button ID="btnSumit" runat="server"  class="def-submitButton"  Text="Submit" Height="33px" Width="85px" OnClick="btn_register" />  
-            </div>  
-         </div>
-     </div>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="BodyResult" runat="server">
+        </div>
+
+
 </asp:Content>

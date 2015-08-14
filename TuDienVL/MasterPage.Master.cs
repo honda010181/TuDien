@@ -33,7 +33,7 @@ namespace TuDienVL
         {
             get
             {
-                return UserMangementPanel;
+                return Body;
             }
         }
     }

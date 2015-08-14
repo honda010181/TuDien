@@ -54,7 +54,7 @@ namespace TuDienVL.User
                 Membership.CreateUser(userName, passWord, email);
 
                 Roles.AddUserToRole(userName, "User");
-
+ 
                 Response.Redirect("Welcome.aspx");
                 //todo should redirect at this point to a result page and tell them to click here to log in
             }

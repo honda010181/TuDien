@@ -2,7 +2,7 @@
 <%@ MasterType VirtualPath="~/MasterPage.Master" %>
 
 
-<asp:Content ID="ContentSection" ContentPlaceHolderID="UserMangementPanel" runat="server">
+<asp:Content ID="ContentSection" ContentPlaceHolderID="Body" runat="server">
         <asp:ListView id="lvContent" runat="server" >
         <EditItemTemplate>
             <span style="">word:

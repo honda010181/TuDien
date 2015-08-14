@@ -16,13 +16,13 @@
     <link href="Content/Custom.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="StyleSection" runat="server" />
 </head>
-<body class="container-fluid" style="background-color:#f1f1f1;" >
+<body class="container" style="background-color:#E6E6E6;" >
     <%--<form id="form1" runat="serve  r">--%>
-    <div class="container" runat ="server">
+    <div  runat ="server">
         <div id="Header" class="row" >
        <!-- Static navbar -->
         <nav class="navbar navbar-inverse" runat ="server">
-          <div class="container-fluid">
+
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
@@ -40,31 +40,47 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="/User/Register.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="/User/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               </ul>
             </div>
-          </div>
+
         </nav>
         <!-- Content Page Section -->
-        
-            <form class="container-fl" id ="inputGroup" runat="server">      
+        </div>
+
+        <div class="row">
+            <form  id ="inputGroup" runat="server">      
                      <div class="row">
-                         <div class="col-sm-1" style="padding-left:0px;">
-                            <asp:Button id="btnSearch" class="btn btn-default" style="width:90px; padding-left:0px; margin-left:0px;" runat="server"  Text="Search"/>     
+                         <div class="col-sm-1">
+                            <asp:Button id="btnSearch" class="btn btn-default" runat="server"  Text="Search"/>     
                          </div>
-                         <div class="col-sm-11" style ="margin-left:0px;">
+                         <div class="col-sm-11" >
                             <asp:TextBox ID="tbSearch" runat="server"  class="form-control" ></asp:TextBox>
                          </div>
                      </div>     
-                    <div  class="div-divider" >
+                    <div  class="div-divider" style="margin-top:40px" >
 
                     </div>
-                     <div class="custom-row" >
-                         <div class="col-sm-9" style="padding:0px">
-                            <asp:ContentPlaceHolder ID="UserMangementPanel" runat="server">
+                     <div class="row" >
+                         <div class="col-sm-7 col-md-7" style="padding:0px; background-color:white">
+                            <asp:ContentPlaceHolder ID="Body" runat="server">
                             </asp:ContentPlaceHolder> 
                          </div>
-                         <div class="col-sm-3">
+                         <div class="col-sm-1">
+
+                         </div>
+                         <div class="col-sm-4 col-md-4" style="background-color:white" >
+
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
+                                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                                     leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                     the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
+                                    software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+                                </p>
 
                          </div>
                      </div>
@@ -77,7 +93,7 @@
     </div>
     <div id="BodySection" class="row">
        <asp:ContentPlaceHolder ID="ContentSection" runat="server">
-           </asp:ContentPlaceHolder>
+       </asp:ContentPlaceHolder>
        <asp:Label ID="lbMessage" runat="server"></asp:Label>
     </div>
     <!-- /container -->
