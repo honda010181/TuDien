@@ -28,8 +28,9 @@ namespace TuDienVL.User
                 Response.Redirect("Account.aspx");
             }
             else
-            { 
-
+            {
+                lblMessage.Text = "Please check User Name or Password!";
+                lblMessage.Visible = true;
             }
         }
 

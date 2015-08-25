@@ -62,7 +62,7 @@
                         </div>  
 
                         <div id="btnSubmit" class ="row">
-                            <asp:Button ID="btnSumit" runat="server"  class="def-submitButton"  Text="Submit" Height="33px" Width="85px" OnClick="btn_register" />  
+                            <asp:Button ID="btnSumit" runat="server"   class="btn btn-default"   Text="Submit"  OnClick="btn_register" />  
                         </div>  
 
 

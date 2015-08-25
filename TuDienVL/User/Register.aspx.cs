@@ -13,6 +13,18 @@ namespace TuDienVL.User
         protected void Page_Load(object sender, EventArgs e)
         {
            Master.UserPanel.Visible = true;
+           Master.ButtonSearch.Click += ButtonSearch_Click;
+        }
+
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            //Master.ButtonSearch.Click += test;
+        }
+
+        protected void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/HomePage.aspx");
         }
 
 

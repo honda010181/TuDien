@@ -3,6 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
   <div class="col-sm-5">
+     <div class="row">
+         <asp:Label ID="lblMessage" runat="server" Visible="false"  Forecolor="Red"/>
+     </div>
      <div id="UserName" class ="row">
            <span>
                <asp:Label ID="lbUserName" runat="server"  Text="User Name"  CssClass="def-padding"/>
