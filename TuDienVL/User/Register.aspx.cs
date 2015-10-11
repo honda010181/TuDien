@@ -24,7 +24,8 @@ namespace TuDienVL.User
 
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/HomePage.aspx");
+            String URL = Ultility.BuildQueryStringURL("/HomePage.aspx", Master.SearchTerm);
+            Response.Redirect(URL);
         }
 
 

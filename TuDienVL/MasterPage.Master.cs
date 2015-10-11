@@ -11,6 +11,10 @@ namespace TuDienVL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.IsAuthenticated)
+            {
+               
+            }
 
         }
 
@@ -27,6 +31,10 @@ namespace TuDienVL
             get
             {
                 return tbSearch.Text;
+            }
+            set
+            {
+                tbSearch.Text = value;
             }
         }
         public ContentPlaceHolder UserPanel

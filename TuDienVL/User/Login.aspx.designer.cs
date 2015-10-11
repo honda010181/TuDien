@@ -65,5 +65,17 @@ namespace TuDienVL.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogin;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new TuDienVL.MasterPage Master {
+            get {
+                return ((TuDienVL.MasterPage)(base.Master));
+            }
+        }
     }
 }

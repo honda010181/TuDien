@@ -4,15 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
+using System.Data;
 
 namespace TuDienVL.User
 {
-    public partial class Account : System.Web.UI.Page
+    public partial class Logout : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Need to cast this to master page or include the directive in the aspx page
-            Master.ButtonSearch.Click += ButtonSearch_Click;
+            FormsAuthentication.SignOut();
         }
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {

@@ -34,14 +34,24 @@
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
+                <li><a href="../About.aspx">About</a></li>
                 <li><a href="#">Page 2</a></li> 
                 <li><a href="#">Page 3</a></li> 
               </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="/User/Register.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="/User/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              </ul>
+              <asp:LoginView ID ="LoginView" runat="server">
+                  <AnonymousTemplate>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li ><a href="/User/Register.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="/User/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      </ul>
+                  </AnonymousTemplate>
+                  <LoggedInTemplate>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/User/Logout.aspx"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                      </ul>
+                  </LoggedInTemplate>
+              </asp:LoginView>
+
             </div>
 
         </nav>

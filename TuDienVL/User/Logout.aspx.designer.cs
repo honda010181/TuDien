@@ -10,25 +10,16 @@
 namespace TuDienVL.User {
     
     
-    public partial class Account {
+    public partial class Logout {
         
         /// <summary>
-        /// lbDisplay control.
+        /// logoutID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDisplay;
-        
-        /// <summary>
-        /// loginView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView loginView;
+        protected global::System.Web.UI.WebControls.Label logoutID;
         
         /// <summary>
         /// Master property.

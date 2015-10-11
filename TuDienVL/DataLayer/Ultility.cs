@@ -53,5 +53,26 @@ namespace TuDienVL
             return ds.Tables[0];
             
         }
+
+        public static string BuildQueryStringURL(string URL ,string SearchTerm)
+        {
+            try 
+            {
+                if (SearchTerm.Equals("") == false)
+                {
+                    URL = URL + "?";
+
+                    URL = URL + "SearchTerm=" + SearchTerm;
+                }
+
+
+            }   
+            catch (Exception e)
+            {
+
+            }
+            return URL;
+
+        }
     }
 }

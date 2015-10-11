@@ -12,7 +12,9 @@ namespace TuDienVL.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Need to cast this to master page or include the directive in the aspx page
+            Master.ButtonSearch.Click += ButtonSearch_Click;
+           
         }
         protected void btn_Login(object sender, EventArgs e)
         {
@@ -25,7 +27,9 @@ namespace TuDienVL.User
             //todo validate not epty string on control
             if (Membership.ValidateUser(UserName, Password))
             {
+                FormsAuthentication.SetAuthCookie(UserName, false); //False option do not create persistent cookie
                 Response.Redirect("Account.aspx");
+
             }
             else
             {
@@ -34,6 +38,16 @@ namespace TuDienVL.User
             }
         }
 
+        protected void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            String URL = Ultility.BuildQueryStringURL("/HomePage.aspx", Master.SearchTerm);
+            Response.Redirect(URL);
+        }
+
+        protected void Authenticate(object sender, EventArgs e)
+        { 
+
+        }
 
     }
 }
