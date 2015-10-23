@@ -54,6 +54,36 @@ namespace TuDienVL
             
         }
 
+
+        //public static Boolean AddUpdateWord (String word , String type , String definition , String example , String userName)
+        //{
+        //    DataSet ds = new DataSet();
+        //    try
+        //    {
+
+        //        String procedureName = "search";
+        //        SqlConnection con = CreateConnection();
+        //        SqlCommand command = new SqlCommand(procedureName, con);
+        //        command.CommandType = CommandType.StoredProcedure;
+
+        //        command.Parameters.Add("@arg_keyword", SqlDbType.NVarChar).Value = word;
+        //        SqlDataAdapter adapter = new SqlDataAdapter(command);
+        //        adapter.Fill(ds, "Table");
+        //        con.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //    finally
+        //    {
+        //    }
+
+        //    return true;
+
+        //}
+
+
         public static string BuildQueryStringURL(string URL ,string SearchTerm)
         {
             try 

@@ -10,7 +10,12 @@ namespace TuDienVL.User
     public partial class Account : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
+            //Need to cast this to master page or include the directive in the aspx page
+            if (Request.IsAuthenticated == false)
+            {
+                Response.Redirect("/User/Login.aspx");
+            }
             //Need to cast this to master page or include the directive in the aspx page
             Master.ButtonSearch.Click += ButtonSearch_Click;
         }
