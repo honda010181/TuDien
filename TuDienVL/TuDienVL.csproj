@@ -75,6 +75,7 @@
     <Content Include="Global.asax" />
     <Content Include="HomePage.aspx" />
     <Content Include="Icon.png" />
+    <Content Include="Image\Logo.png" />
     <Content Include="Image\thumpUp.png" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

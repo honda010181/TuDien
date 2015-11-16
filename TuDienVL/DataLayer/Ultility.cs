@@ -55,33 +55,38 @@ namespace TuDienVL
         }
 
 
-        //public static Boolean AddUpdateWord (String word , String type , String definition , String example , String userName)
-        //{
-        //    DataSet ds = new DataSet();
-        //    try
-        //    {
+        public static Boolean SaveWord(String word, String definition, String example, String userName)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
 
-        //        String procedureName = "search";
-        //        SqlConnection con = CreateConnection();
-        //        SqlCommand command = new SqlCommand(procedureName, con);
-        //        command.CommandType = CommandType.StoredProcedure;
+                String procedureName = "SaveWord";
+                SqlConnection con = CreateConnection();
+                SqlCommand command = new SqlCommand(procedureName, con);
+                command.CommandType = CommandType.StoredProcedure;
 
-        //        command.Parameters.Add("@arg_keyword", SqlDbType.NVarChar).Value = word;
-        //        SqlDataAdapter adapter = new SqlDataAdapter(command);
-        //        adapter.Fill(ds, "Table");
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
+                command.Parameters.Add("@arg_word", SqlDbType.NVarChar).Value = word;
+                command.Parameters.Add("@arg_definition", SqlDbType.NVarChar).Value = definition;
+                command.Parameters.Add("@arg_example", SqlDbType.NVarChar).Value = example;
+                command.Parameters.Add("@arg_user_name", SqlDbType.NVarChar).Value = userName;
 
-        //    }
-        //    finally
-        //    {
-        //    }
 
-        //    return true;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(ds, "Table");
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+            }
 
-        //}
+            return true;
+
+        }
 
 
         public static string BuildQueryStringURL(string URL ,string SearchTerm)

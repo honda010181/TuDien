@@ -62,9 +62,6 @@
                     <asp:Label ID="wordLabel" runat="server" class ="def-word-header" Text='<%# Eval("word") %>' />
                 </div>
                 <div class="row" style="padding-left:15px">
-                    Từ loại: <asp:Label ID="tu_loai_codeLabel" runat="server" Text='<%# Eval("tu_loai_code") %>' />
-                </div>
-                <div class="row" style="padding-left:15px">
                     Định nghĩa: <asp:Label ID="lbDefinition" runat="server" Text='<%# Eval("definition") %>' />
                 </div>
                 <div class="row" style="padding-left:15px">

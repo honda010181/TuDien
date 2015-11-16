@@ -20,6 +20,7 @@
     <%--<form id="form1" runat="serve  r">--%>
     <div  runat ="server">
         <div id="Header" class="row" >
+
        <!-- Static navbar -->
         <nav class="navbar navbar-inverse" runat ="server">
 
@@ -29,7 +30,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span> 
               </button>
-              <a class="navbar-brand" href="/Homepage.aspx">My website</a>
+
+              <a class="navbar-brand" href="/Homepage.aspx">                <img src="/Image/Logo.png"   style="width:100px ; height:30px" /></a>
+
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
@@ -61,12 +64,13 @@
         <div class="row">
             <form  id ="inputGroup" runat="server">      
                      <div class="row">
-                         <div class="col-sm-1">
-                            <asp:Button id="btnSearch" class="btn btn-default" runat="server"  Text="Search"/>     
-                         </div>
                          <div class="col-sm-11" >
                             <asp:TextBox ID="tbSearch" runat="server"  class="form-control" ></asp:TextBox>
                          </div>
+                         <div class="col-sm-1">
+                            <asp:Button id="btnSearch" class="btn btn-default" runat="server"  Text="Search"/>     
+                         </div>
+
                      </div>     
                     <div  class="div-divider" style="margin-top:40px" >
 

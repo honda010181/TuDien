@@ -26,8 +26,17 @@ namespace TuDienVL
 
 
         protected void btn_add(object sender, EventArgs e)
-        { 
-        
+        {
+            String Word;
+            String Defintion;
+            String Example;
+            String UserName;
+
+            Word = tbWord.Text.ToString().Trim();
+            Defintion = tbDefinition.Text.ToString().Trim();
+            Example = tbExample.Text.ToString().Trim();
+            UserName = User.Identity.Name.ToString();
+            Ultility.SaveWord(Word, Defintion, Example, UserName);
         }
     }
 }
