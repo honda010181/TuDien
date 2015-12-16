@@ -14,6 +14,7 @@ namespace TuDienVL.User
         {
            Master.UserPanel.Visible = true;
            Master.ButtonSearch.Click += ButtonSearch_Click;
+           ScriptManager.RegisterStartupScript(Page, Page.GetType(), "registerModal", "$('#registerModal').modal();", true);
         }
 
 

@@ -17,6 +17,7 @@ namespace TuDienVL
                 Response.Redirect("/User/Login.aspx");
             }
             Master.ButtonSearch.Click += ButtonSearch_Click;
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addModal", "$('#addModal').modal();", true);
         }
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {

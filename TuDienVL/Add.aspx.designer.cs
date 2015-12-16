@@ -40,24 +40,6 @@ namespace TuDienVL {
         protected global::System.Web.UI.WebControls.TextBox tbWord;
         
         /// <summary>
-        /// lbWordType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbWordType;
-        
-        /// <summary>
-        /// tbWordType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbWordType;
-        
-        /// <summary>
         /// lbDefinition control.
         /// </summary>
         /// <remarks>

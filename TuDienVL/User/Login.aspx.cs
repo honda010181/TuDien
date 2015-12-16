@@ -14,7 +14,7 @@ namespace TuDienVL.User
         {
             //Need to cast this to master page or include the directive in the aspx page
             Master.ButtonSearch.Click += ButtonSearch_Click;
-           
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "loginModal", "$('#loginModal').modal();", true);         
         }
         protected void btn_Login(object sender, EventArgs e)
         {

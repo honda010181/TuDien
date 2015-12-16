@@ -31,7 +31,7 @@
                 <span class="icon-bar"></span> 
               </button>
 
-              <a class="navbar-brand" href="/Homepage.aspx">                <img src="/Image/Logo.png"   style="width:100px ; height:30px" /></a>
+              <a class="navbar-brand" href="/Homepage.aspx"><img src="/Image/Logo.png"   style="width:100px ; height:30px" /></a>
 
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -70,7 +70,6 @@
                          <div class="col-sm-1">
                             <asp:Button id="btnSearch" class="btn btn-default" runat="server"  Text="Search"/>     
                          </div>
-
                      </div>     
                     <div  class="div-divider" style="margin-top:40px" >
 
@@ -84,7 +83,11 @@
 
                          </div>
                          <div class="col-sm-4 col-md-4" style="background-color:white" >
+                             <div class="row">
 
+                                <a class="div-image-animation" href="/Add.aspx"><img src="../Image/Add.gif"  style="width:100px ; height:100px"/></a>
+                             </div>
+                             <div class="row">
                                 <p>
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                                      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
@@ -95,6 +98,8 @@
 
 
                                 </p>
+                             </div>
+
 
                          </div>
                      </div>

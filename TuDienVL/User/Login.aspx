@@ -3,30 +3,44 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="StyleSection" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-  <div class="col-sm-5">
-     <div class="row">
-         <asp:Label ID="lblMessage" runat="server" Visible="false"  Forecolor="Red"/>
-     </div>
-     <div id="UserName" class ="row">
-           <span>
-               <asp:Label ID="lbUserName" runat="server"  Text="User Name"  CssClass="def-padding"/>
-               <asp:TextBox ID="tbUserName" runat="server" class="form-control" placeholder="User Name"/>
-     
-           </span>
-       </div>
-     
-       <div id="Password" class ="row">
-           <span>
-               <asp:Label ID="lbPassword" runat="server"  Text="Password" CssClass="def-padding"/>
-               <asp:TextBox ID="tbPassword" runat="server" class="form-control" placeholder="Password"/>
-           </span>  
-       </div>
-       <div id="Login" class ="row">
-           <asp:Button ID="btnLogin" runat="server"  class="def-submitButton"  Text="Submit" Height="33px" Width="85px" OnClick="btn_Login" />  
-       </div>    
+      <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
 
-  </div>
-                             
+         <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                 <div class="row">
+                       <asp:Label ID="lblMessage" runat="server" Visible="false"  Forecolor="Red"/>
+                 </div>
+                 <div id="UserName" class ="row">
+                       <span>
+                           <asp:TextBox ID="tbUserName" runat="server" class="form-control" placeholder="User Name"/>
+     
+                       </span>
+                   </div>
+                    <br />     
+                   <div id="Password" class ="row">
+                       <span>
+                           <asp:TextBox ID="tbPassword" runat="server" class="form-control" placeholder="Password"/>
+                       </span>  
+                   </div>
+                    <br />
+                   <div id="Login" class ="row">
+                       <asp:Button ID="btnLogin" runat="server"  class="btn btn-default"  Text="Submit" Height="33px" Width="85px" OnClick="btn_Login" />  
+                   </div>    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>                          
                         
                         
 </asp:Content>
