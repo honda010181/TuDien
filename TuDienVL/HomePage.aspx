@@ -3,6 +3,7 @@
 
 
 <asp:Content ID="ContentSection" ContentPlaceHolderID="Body" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:ListView id="lvContent" runat="server" >
         <EditItemTemplate>
             <span style="">word:
