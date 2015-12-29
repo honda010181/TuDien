@@ -15,6 +15,7 @@ namespace TuDienVL
             {
                
             }
+            ScriptManager1.RegisterAsyncPostBackControl(btnSearch);
 
         }
 
@@ -44,5 +45,16 @@ namespace TuDienVL
                 return Body;
             }
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (Body.FindControl("upMain") != null )
+            {
+                ((UpdatePanel)Body.FindControl("upMain")).Update();
+            }
+
+        }
+
+
     }
 }

@@ -60,9 +60,15 @@ namespace TuDienVL
             dt = Ultility.Search(SearchTerm);
             lvContent.DataSource = dt;
             lvContent.DataBind();
-
+            
         }
-        
+
+        protected void imgThumpUp_Click(object sender, ImageClickEventArgs e)
+        {
+ 
+            
+            
+        }
 
 
     }

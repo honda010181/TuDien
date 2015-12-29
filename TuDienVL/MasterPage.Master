@@ -17,7 +17,6 @@
     <asp:ContentPlaceHolder ID="StyleSection" runat="server" />
 </head>
 <body class="container" style="background-color:#E6E6E6;" >
-    <%--<form id="form1" runat="serve  r">--%>
     <div  runat ="server">
         <div id="Header" class="row" >
 
@@ -63,12 +62,13 @@
 
         <div class="row">
             <form  id ="inputGroup" runat="server">      
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                      <div class="row">
                          <div class="col-sm-11" >
                             <asp:TextBox ID="tbSearch" runat="server"  class="form-control" ></asp:TextBox>
                          </div>
                          <div class="col-sm-1">
-                            <asp:Button id="btnSearch" class="btn btn-default" runat="server"  Text="Search"/>     
+                            <asp:Button id="btnSearch" class="btn btn-default" runat="server"  Text="Search" OnClick="btnSearch_Click"/>     
                          </div>
                      </div>     
                     <div  class="div-divider" style="margin-top:40px" >
@@ -111,6 +111,7 @@
 
     </div>
     <div id="BodySection" class="row">
+
        <asp:ContentPlaceHolder ID="ContentSection" runat="server">
        </asp:ContentPlaceHolder>
        <asp:Label ID="lbMessage" runat="server"></asp:Label>
@@ -118,7 +119,7 @@
     <!-- /container -->
     <%-- Script Section --%>
     <asp:ContentPlaceHolder ID="BodyResult" runat="server" />
-    <%--</form>--%>
+
 
     </div>
 

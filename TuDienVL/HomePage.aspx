@@ -3,122 +3,138 @@
 
 
 <asp:Content ID="ContentSection" ContentPlaceHolderID="Body" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <asp:ListView id="lvContent" runat="server" >
-        <EditItemTemplate>
-            <span style="">word:
-            <asp:TextBox ID="wordTextBox" runat="server" Text='<%# Bind("word") %>' />
-            <br />
-            definition:
-            <asp:TextBox ID="definitionTextBox" runat="server" Text='<%# Bind("definition") %>' />
-            <br />
-            tu_loai_code:
-            <asp:TextBox ID="tu_loai_codeTextBox" runat="server" Text='<%# Bind("tu_loai_code") %>' />
-            <br />
-            user_name:
-            <asp:TextBox ID="user_nameTextBox" runat="server" Text='<%# Bind("user_name") %>' />
-            <br />
-            last_mod_date:
-            <asp:TextBox ID="last_mod_dateTextBox" runat="server" Text='<%# Bind("last_mod_date") %>' />
-            <br />
-            up_vote:
-            <asp:TextBox ID="up_voteTextBox" runat="server" Text='<%# Bind("up_vote") %>' />
-            <br />
-            down_vote:
-            <asp:TextBox ID="down_voteTextBox" runat="server" Text='<%# Bind("down_vote") %>' />
-            <br />
-            <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-            <br /><br /></span>
-        </EditItemTemplate>
-        <EmptyDataTemplate>
-            <span>Chúng tôi không tìm được từ này.
-              <br />    Bạn có thể viết định nghĩa của chính mình, và xem bao nhiêu người đồng ý với mình.
-            </span>
+         <asp:UpdatePanel ID="upMain" runat="server" UpdateMode="Conditional">
+             <Triggers >
+             </Triggers>
+               <ContentTemplate>
+                     <asp:ListView id="lvContent" runat="server" >
+                        <EditItemTemplate>
+                            <span style="">word:
+                            <asp:TextBox ID="wordTextBox" runat="server" Text='<%# Bind("word") %>' />
+                            <br />
+                            definition:
+                            <asp:TextBox ID="definitionTextBox" runat="server" Text='<%# Bind("definition") %>' />
+                            <br />
+                            tu_loai_code:
+                            <asp:TextBox ID="tu_loai_codeTextBox" runat="server" Text='<%# Bind("tu_loai_code") %>' />
+                            <br />
+                            user_name:
+                            <asp:TextBox ID="user_nameTextBox" runat="server" Text='<%# Bind("user_name") %>' />
+                            <br />
+                            last_mod_date:
+                            <asp:TextBox ID="last_mod_dateTextBox" runat="server" Text='<%# Bind("last_mod_date") %>' />
+                            <br />
+                            up_vote:
+                            <asp:TextBox ID="up_voteTextBox" runat="server" Text='<%# Bind("up_vote") %>' />
+                            <br />
+                            down_vote:
+                            <asp:TextBox ID="down_voteTextBox" runat="server" Text='<%# Bind("down_vote") %>' />
+                            <br />
+                            <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                            <br /><br /></span>
+                        </EditItemTemplate>
+                        <EmptyDataTemplate>
+                            <span>Chúng tôi không tìm được từ này.
+                              <br />    Bạn có thể viết định nghĩa của chính mình, và xem bao nhiêu người đồng ý với mình.
+                            </span>
 
-        </EmptyDataTemplate>
-        <InsertItemTemplate>
-            <span style="">word:
-            <asp:TextBox ID="wordTextBox" runat="server" Text='<%# Bind("word") %>' />
-            <br />definition:
-            <asp:TextBox ID="definitionTextBox" runat="server" Text='<%# Bind("definition") %>' />
-            <br />tu_loai_code:
-            <asp:TextBox ID="tu_loai_codeTextBox" runat="server" Text='<%# Bind("tu_loai_code") %>' />
-            <br />user_name:
-            <asp:TextBox ID="user_nameTextBox" runat="server" Text='<%# Bind("user_name") %>' />
-            <br />last_mod_date:
-            <asp:TextBox ID="last_mod_dateTextBox" runat="server" Text='<%# Bind("last_mod_date") %>' />
-            <br />up_vote:
-            <asp:TextBox ID="up_voteTextBox" runat="server" Text='<%# Bind("up_vote") %>' />
-            <br />down_vote:
-            <asp:TextBox ID="down_voteTextBox" runat="server" Text='<%# Bind("down_vote") %>' />
-            <br />
-            <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-            <br /><br /></span>
-        </InsertItemTemplate>
-        <ItemTemplate>
-            <div style="background-color:white; margin-left:0px">
-                <div class="row" style="padding-left:15px">
-                    <asp:Label ID="wordLabel" runat="server" class ="def-word-header" Text='<%# Eval("word") %>' />
-                </div>
-                <div class="row" style="padding-left:15px">
-                    Định nghĩa: <asp:Label ID="lbDefinition" runat="server" Text='<%# Eval("definition") %>' />
-                </div>
-                <div class="row" style="padding-left:15px">
-                    Cách dùng:
-                    <asp:Label ID="lbExample" runat="server" Text='<%# Eval("example") %>' />
-                </div>
-                <br />
-                <div class="row" style="padding-left:15px">
-                    <div class="col-sm-4" style="padding:0px">
-                        <asp:Label ID="lbUserName" runat="server" class ="def-author" Text='<%# Eval("user_name") %>' />
-                        <asp:Label ID="last_mod_dateLabel" runat="server"  class ="def-created-date"  Text='<%# Eval("last_mod_date") %>' />
-                    </div>
-                    <div class="col-sm-4">
-                        <asp:Image ID="Image2" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" />
-                        <asp:Label ID="Label1" runat="server"  class="def-thumpUp"  Text='<%# Eval("up_vote") %>' />
-                        <asp:Image ID ="Image3" runat="server"  class="def-thumpUp"  ImageUrl="~/Image/thumpUp.png" />
-                        <asp:Label ID="Label2" runat="server"  class="def-thumpUp"  Text='<%# Eval("down_vote") %>' />                  
-                    </div>
+                        </EmptyDataTemplate>
+                        <InsertItemTemplate>
+                            <span style="">word:
+                            <asp:TextBox ID="wordTextBox" runat="server" Text='<%# Bind("word") %>' />
+                            <br />definition:
+                            <asp:TextBox ID="definitionTextBox" runat="server" Text='<%# Bind("definition") %>' />
+                            <br />tu_loai_code:
+                            <asp:TextBox ID="tu_loai_codeTextBox" runat="server" Text='<%# Bind("tu_loai_code") %>' />
+                            <br />user_name:
+                            <asp:TextBox ID="user_nameTextBox" runat="server" Text='<%# Bind("user_name") %>' />
+                            <br />last_mod_date:
+                            <asp:TextBox ID="last_mod_dateTextBox" runat="server" Text='<%# Bind("last_mod_date") %>' />
+                            <br />up_vote:
+                            <asp:TextBox ID="up_voteTextBox" runat="server" Text='<%# Bind("up_vote") %>' />
+                            <br />down_vote:
+                            <asp:TextBox ID="down_voteTextBox" runat="server" Text='<%# Bind("down_vote") %>' />
+                            <br />
+                            <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                            <br /><br /></span>
+                        </InsertItemTemplate>
+                        <ItemTemplate>
+                            <div style="background-color:white; margin-left:0px">
+                                <div class="row" style="padding-left:15px">
+                                    <asp:Label ID="wordLabel" runat="server" class ="def-word-header" Text='<%# Eval("word") %>' />
+                                </div>
+                                <div class="row" style="padding-left:15px">
+                                    Định nghĩa: <asp:Label ID="lbDefinition" runat="server" Text='<%# Eval("definition") %>' />
+                                </div>
+                                <div class="row" style="padding-left:15px">
+                                    Cách dùng:
+                                    <asp:Label ID="lbExample" runat="server" Text='<%# Eval("example") %>' />
+                                </div>
+                                <br />
+                                <div class="row" style="padding-left:15px">
+                                    <div class="col-sm-4" style="padding:0px">
+                                        <asp:Label ID="lbUserName" runat="server" class ="def-author" Text='<%# Eval("user_name") %>' />
+                                        <asp:Label ID="last_mod_dateLabel" runat="server"  class ="def-created-date"  Text='<%# Eval("last_mod_date") %>' />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <asp:ImageButton ID="Image2" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" />
+                                        <asp:Label ID="Label1" runat="server"  class="def-thumpUp"  Text='<%# Eval("up_vote") %>' />
+                                        <asp:Image ID ="Image3" runat="server"  class="def-thumpUp"  ImageUrl="~/Image/thumpUp.png" />
+                                        <asp:Label ID="Label2" runat="server"  class="def-thumpUp"  Text='<%# Eval("down_vote") %>' />                  
+                                    </div>
 
-                </div>
-            </div>
-            <div class="div-divider"></div>
-        </ItemTemplate>
-        <LayoutTemplate>
-            <div id="itemPlaceholderContainer" runat="server" style="">
-                <span runat="server" id="itemPlaceholder" />
-            </div>
-            <div style="">
-            </div>
-        </LayoutTemplate>
-        <SelectedItemTemplate>
-            <span style="">word:
-            <asp:Label ID="wordLabel" runat="server" Text='<%# Eval("word") %>' />
-            <br />
-            definition:
-            <asp:Label ID="definitionLabel" runat="server" Text='<%# Eval("definition") %>' />
-            <br />
-            tu_loai_code:
-            <asp:Label ID="tu_loai_codeLabel" runat="server" Text='<%# Eval("tu_loai_code") %>' />
-            <br />
-            user_name:
-            <asp:Label ID="user_nameLabel" runat="server" Text='<%# Eval("user_name") %>' />
-            <br />
-            last_mod_date:
-            <asp:Label ID="last_mod_dateLabel" runat="server" Text='<%# Eval("last_mod_date") %>' />
-            <br />
-            up_vote:
-            <asp:Label ID="up_voteLabel" runat="server" Text='<%# Eval("up_vote") %>' />
-            <br />
-            down_vote:
-            <asp:Label ID="down_voteLabel" runat="server" Text='<%# Eval("down_vote") %>' />
-            <br />
-<br /></span>
-        </SelectedItemTemplate>
+                                </div>
+                            </div>
+                            <div class="div-divider"></div>                
+                                 <asp:UpdatePanel ID ="UpdatePanel1" runat="server">
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="imgThumpUp" EventName="Click" />
+                                    </Triggers>
+                                     <ContentTemplate>
+                                          <asp:ImageButton ID="imgThumpUp" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" OnClick="imgThumpUp_Click" />
+                                          <asp:Label ID="Label3" runat="server"  class="def-thumpUp"  Text='test' />
+                                          <asp:ImageButton ID="imgThumpDown" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" />
+     
+                                     </ContentTemplate>
+                                 </asp:UpdatePanel>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <div id="itemPlaceholderContainer" runat="server" style="">
+                                <span runat="server" id="itemPlaceholder" />
+                            </div>
+                            <div style="">
+                            </div>
+                        </LayoutTemplate>
+                        <SelectedItemTemplate>
+                            <span style="">word:
+                            <asp:Label ID="wordLabel" runat="server" Text='<%# Eval("word") %>' />
+                            <br />
+                            definition:
+                            <asp:Label ID="definitionLabel" runat="server" Text='<%# Eval("definition") %>' />
+                            <br />
+                            tu_loai_code:
+                            <asp:Label ID="tu_loai_codeLabel" runat="server" Text='<%# Eval("tu_loai_code") %>' />
+                            <br />
+                            user_name:
+                            <asp:Label ID="user_nameLabel" runat="server" Text='<%# Eval("user_name") %>' />
+                            <br />
+                            last_mod_date:
+                            <asp:Label ID="last_mod_dateLabel" runat="server" Text='<%# Eval("last_mod_date") %>' />
+                            <br />
+                            up_vote:
+                            <asp:Label ID="up_voteLabel" runat="server" Text='<%# Eval("up_vote") %>' />
+                            <br />
+                            down_vote:
+                            <asp:Label ID="down_voteLabel" runat="server" Text='<%# Eval("down_vote") %>' />
+                            <br />
+                <br /></span>
+                        </SelectedItemTemplate>
+                    </asp:ListView>
 
-    </asp:ListView>
+               </ContentTemplate>
+         </asp:UpdatePanel>
 
 
 </asp:Content>
