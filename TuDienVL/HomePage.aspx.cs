@@ -63,11 +63,28 @@ namespace TuDienVL
             
         }
 
-        protected void imgThumpUp_Click(object sender, ImageClickEventArgs e)
+
+        protected void ImageButton1_Command(object sender, CommandEventArgs e)
         {
- 
-            
-            
+            if (! Request.IsAuthenticated)
+            {
+                Response.Redirect("/User/Login.aspx");
+            }
+            String id;
+            id = e.CommandArgument.ToString();
+            Ultility.SaveVote(id, HttpContext.Current.User.Identity.Name.ToString(), 1 );
+
+        }
+
+        protected void ImageButtonThumpDown_Command(object sender, CommandEventArgs e)
+        {
+            if (!Request.IsAuthenticated)
+            {
+                Response.Redirect("/User/Login.aspx");
+            }
+            String id;
+            id = e.CommandArgument.ToString();
+            Ultility.SaveVote(id, HttpContext.Current.User.Identity.Name.ToString(), -1);
         }
 
 

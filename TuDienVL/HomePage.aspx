@@ -60,43 +60,39 @@
                             <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                             <br /><br /></span>
                         </InsertItemTemplate>
-                        <ItemTemplate>
-                            <div style="background-color:white; margin-left:0px">
-                                <div class="row" style="padding-left:15px">
-                                    <asp:Label ID="wordLabel" runat="server" class ="def-word-header" Text='<%# Eval("word") %>' />
-                                </div>
-                                <div class="row" style="padding-left:15px">
-                                    Định nghĩa: <asp:Label ID="lbDefinition" runat="server" Text='<%# Eval("definition") %>' />
-                                </div>
-                                <div class="row" style="padding-left:15px">
-                                    Cách dùng:
-                                    <asp:Label ID="lbExample" runat="server" Text='<%# Eval("example") %>' />
-                                </div>
-                                <br />
-                                <div class="row" style="padding-left:15px">
-                                    <div class="col-sm-4" style="padding:0px">
-                                        <asp:Label ID="lbUserName" runat="server" class ="def-author" Text='<%# Eval("user_name") %>' />
-                                        <asp:Label ID="last_mod_dateLabel" runat="server"  class ="def-created-date"  Text='<%# Eval("last_mod_date") %>' />
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <asp:ImageButton ID="Image2" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" />
-                                        <asp:Label ID="Label1" runat="server"  class="def-thumpUp"  Text='<%# Eval("up_vote") %>' />
-                                        <asp:Image ID ="Image3" runat="server"  class="def-thumpUp"  ImageUrl="~/Image/thumpUp.png" />
-                                        <asp:Label ID="Label2" runat="server"  class="def-thumpUp"  Text='<%# Eval("down_vote") %>' />                  
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="div-divider"></div>                
+                        <ItemTemplate>    
                                  <asp:UpdatePanel ID ="UpdatePanel1" runat="server">
                                     <Triggers>
-                                        <asp:AsyncPostBackTrigger ControlID="imgThumpUp" EventName="Click" />
+                                        <asp:AsyncPostBackTrigger ControlID="ImageButtonThumpUp" EventName="Click" />
                                     </Triggers>
                                      <ContentTemplate>
-                                          <asp:ImageButton ID="imgThumpUp" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" OnClick="imgThumpUp_Click" />
-                                          <asp:Label ID="Label3" runat="server"  class="def-thumpUp"  Text='test' />
-                                          <asp:ImageButton ID="imgThumpDown" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" />
-     
+                                         <div style="background-color:white; margin-left:0px">
+                                            <div class="row" style="padding-left:15px">
+                                                <asp:Label ID="Label4" runat="server" class ="def-word-header" Text='<%# Eval("word") %>' />
+                                            </div>
+                                            <div class="row" style="padding-left:15px">
+                                                Định nghĩa: <asp:Label ID="Label5" runat="server" Text='<%# Eval("definition") %>' />
+                                            </div>
+                                            <div class="row" style="padding-left:15px">
+                                                Cách dùng:
+                                                <asp:Label ID="Label6" runat="server" Text='<%# Eval("example") %>' />
+                                            </div>
+                                            <br />
+                                            <div class="row" style="padding-left:15px">
+                                                <div class="col-sm-8" style="padding:0px">
+                                                    <asp:Label ID="Label7" runat="server" class ="def-author" Text='<%# Eval("user_name") %>' />
+                                                    <asp:Label ID="Label8" runat="server"  class ="def-created-date"  Text='<%# Eval("last_mod_date") %>' />
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <asp:ImageButton ID="ImageButtonThumpUp" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" CommandName="Select"  CommandArgument='<%# Eval("ID") %>' OnCommand="ImageButton1_Command"/>
+                                                    <asp:Label ID="Label9" runat="server"  class="def-thumpUp"  Text='<%# Eval("up_vote") %>' />
+                                                    <asp:ImageButton ID="ImageButtonThumpDown" runat="server" style="border-image-width: 10px; height:20px; width:20px; margin-top:-15px ;" ImageUrl="~/Image/thumpDown.png" CommandName="Select"  CommandArgument='<%# Eval("ID") %>'  OnCommand="ImageButtonThumpDown_Command"/>
+                                                   
+                                                    <asp:Label ID="Label10" runat="server"  class="def-thumpUp"  Text='<%# Eval("down_vote") %>' />                  
+                                                </div>
+
+                                            </div>
+                                        </div>
                                      </ContentTemplate>
                                  </asp:UpdatePanel>
                         </ItemTemplate>

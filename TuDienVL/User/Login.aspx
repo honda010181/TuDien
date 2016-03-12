@@ -32,10 +32,12 @@
                     <br />
                    <div id="Login" class ="row">
                        <asp:Button ID="btnLogin" runat="server"  class="btn btn-default"  Text="Submit" Height="33px" Width="85px" OnClick="btn_Login" />  
+                       <asp:Button ID="Button1Facebook" runat="server"  class="btn btn-default"  Text="Login With Facebook" Height="33px" Width="85px" OnClick="btn_LoginWithFaceBook" />  
                    </div>    
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
             </div>
           </div>
       

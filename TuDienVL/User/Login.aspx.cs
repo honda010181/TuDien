@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using System.Data;
+using System.Configuration;
 namespace TuDienVL.User
 {
     public partial class Login : System.Web.UI.Page
@@ -44,9 +45,11 @@ namespace TuDienVL.User
             Response.Redirect(URL);
         }
 
-        protected void Authenticate(object sender, EventArgs e)
-        { 
-
+        protected void btn_LoginWithFaceBook(object sender, EventArgs e)
+        {
+           // HyperLink1.NavigateUrl = "https://www.facebook.com/v2.4/dialog/oauth/?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&redirect_uri=http://" + Request.ServerVariables["SERVER_NAME"] + ":" + Request.ServerVariables["SERVER_PORT"] + "/account/user.aspx&response_type=code&state=1";
+            String URL = "https://www.facebook.com/v2.4/dialog/oauth/?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&redirect_uri=http://" + Request.ServerVariables["SERVER_NAME"] + ":" + Request.ServerVariables["SERVER_PORT"] + "/user/account.aspx&response_type=code&state=1";
+            Response.Redirect(URL);
         }
 
     }

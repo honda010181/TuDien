@@ -88,7 +88,36 @@ namespace TuDienVL
 
         }
 
+        public static Boolean SaveVote(String wordId, String UserName, int up_down_vote)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
 
+                String procedureName = "SaveVote";
+                SqlConnection con = CreateConnection();
+                SqlCommand command = new SqlCommand(procedureName, con);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("@arg_word_id", SqlDbType.NVarChar).Value = wordId;
+                command.Parameters.Add("@arg_user_name", SqlDbType.NVarChar).Value = UserName;
+                command.Parameters.Add("@arg_vote_up_down", SqlDbType.NVarChar).Value = up_down_vote;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(ds, "Table");
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+            }
+
+            return true;
+
+        }
         public static string BuildQueryStringURL(string URL ,string SearchTerm)
         {
             try 

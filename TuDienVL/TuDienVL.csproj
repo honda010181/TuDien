@@ -78,6 +78,7 @@
     <Content Include="Image\Add-1.PNG" />
     <Content Include="Image\Add.gif" />
     <Content Include="Image\Logo.png" />
+    <Content Include="Image\thumpDown.png" />
     <Content Include="Image\thumpUp.png" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -150,6 +151,7 @@
     <Compile Include="User\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\FacebookUser.cs" />
     <Compile Include="User\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
