@@ -87,7 +87,13 @@ namespace TuDienVL
             return true;
 
         }
-
+        /// <summary>
+        /// This function will save or update each word
+        /// </summary>
+        /// <param name="wordId"></param>
+        /// <param name="UserName"></param>
+        /// <param name="up_down_vote"></param>
+        /// <returns></returns>
         public static Boolean SaveVote(String wordId, String UserName, int up_down_vote)
         {
             DataSet ds = new DataSet();
@@ -112,7 +118,8 @@ namespace TuDienVL
                 return false;
             }
             finally
-            {
+            {                
+
             }
 
             return true;

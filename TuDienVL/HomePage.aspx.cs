@@ -73,7 +73,13 @@ namespace TuDienVL
             String id;
             id = e.CommandArgument.ToString();
             Ultility.SaveVote(id, HttpContext.Current.User.Identity.Name.ToString(), 1 );
+            upMain.Update();
 
+            //call Search() to force the web to refresh with new votes 
+            Search(Master.SearchTerm.ToString());
+            //upMain.Visible = false;
+
+            //((UpdatePanel)lvContent.FindControl("UpdatePanel1")).Update();
         }
 
         protected void ImageButtonThumpDown_Command(object sender, CommandEventArgs e)
@@ -85,7 +91,19 @@ namespace TuDienVL
             String id;
             id = e.CommandArgument.ToString();
             Ultility.SaveVote(id, HttpContext.Current.User.Identity.Name.ToString(), -1);
+            upMain.Update();
+            //call Search() to force the web to refresh with new votes 
+            Search(Master.SearchTerm.ToString());
+
+           
         }
+
+        protected void lvContent_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
+        {
+            lvContent.SelectedIndex = e.NewSelectedIndex;
+        }
+
+
 
 
     }

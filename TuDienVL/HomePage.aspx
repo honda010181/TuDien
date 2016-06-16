@@ -7,7 +7,7 @@
              <Triggers >
              </Triggers>
                <ContentTemplate>
-                     <asp:ListView id="lvContent" runat="server" >
+                     <asp:ListView id="lvContent" runat="server"  OnSelectedIndexChanging="lvContent_SelectedIndexChanging" >
                         <EditItemTemplate>
                             <span style="">word:
                             <asp:TextBox ID="wordTextBox" runat="server" Text='<%# Bind("word") %>' />
@@ -21,7 +21,7 @@
                             user_name:
                             <asp:TextBox ID="user_nameTextBox" runat="server" Text='<%# Bind("user_name") %>' />
                             <br />
-                            last_mod_date:
+                            last_mod_date:=
                             <asp:TextBox ID="last_mod_dateTextBox" runat="server" Text='<%# Bind("last_mod_date") %>' />
                             <br />
                             up_vote:
@@ -84,7 +84,7 @@
                                                     <asp:Label ID="Label8" runat="server"  class ="def-created-date"  Text='<%# Eval("last_mod_date") %>' />
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <asp:ImageButton ID="ImageButtonThumpUp" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" CommandName="Select"  CommandArgument='<%# Eval("ID") %>' OnCommand="ImageButton1_Command"/>
+                                                    <asp:ImageButton ID="ImageButtonThumpUp" runat="server" class="def-thumpUp" ImageUrl="~/Image/thumpUp.png" CommandName="Select"  CommandArgument='<%# Eval("ID") %>' OnCommand="ImageButton1_Command" />
                                                     <asp:Label ID="Label9" runat="server"  class="def-thumpUp"  Text='<%# Eval("up_vote") %>' />
                                                     <asp:ImageButton ID="ImageButtonThumpDown" runat="server" style="border-image-width: 10px; height:20px; width:20px; margin-top:-15px ;" ImageUrl="~/Image/thumpDown.png" CommandName="Select"  CommandArgument='<%# Eval("ID") %>'  OnCommand="ImageButtonThumpDown_Command"/>
                                                    
@@ -103,30 +103,7 @@
                             <div style="">
                             </div>
                         </LayoutTemplate>
-                        <SelectedItemTemplate>
-                            <span style="">word:
-                            <asp:Label ID="wordLabel" runat="server" Text='<%# Eval("word") %>' />
-                            <br />
-                            definition:
-                            <asp:Label ID="definitionLabel" runat="server" Text='<%# Eval("definition") %>' />
-                            <br />
-                            tu_loai_code:
-                            <asp:Label ID="tu_loai_codeLabel" runat="server" Text='<%# Eval("tu_loai_code") %>' />
-                            <br />
-                            user_name:
-                            <asp:Label ID="user_nameLabel" runat="server" Text='<%# Eval("user_name") %>' />
-                            <br />
-                            last_mod_date:
-                            <asp:Label ID="last_mod_dateLabel" runat="server" Text='<%# Eval("last_mod_date") %>' />
-                            <br />
-                            up_vote:
-                            <asp:Label ID="up_voteLabel" runat="server" Text='<%# Eval("up_vote") %>' />
-                            <br />
-                            down_vote:
-                            <asp:Label ID="down_voteLabel" runat="server" Text='<%# Eval("down_vote") %>' />
-                            <br />
-                <br /></span>
-                        </SelectedItemTemplate>
+
                     </asp:ListView>
 
                </ContentTemplate>

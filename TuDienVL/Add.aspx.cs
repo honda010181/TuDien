@@ -40,11 +40,13 @@ namespace TuDienVL
             if (Ultility.SaveWord(Word, Defintion, Example, UserName))
             {
                 lbErrorMessage.Text = "Bạn đã thành công đăng kí từ này.";
+                lbErrorMessage.Visible = true;
 
             }
             else
             {
                 lbErrorMessage.Text = "Từ nay chua được đăng kí.";
+                lbErrorMessage.Visible = true;
             }
         }
     }

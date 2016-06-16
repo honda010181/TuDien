@@ -14,6 +14,7 @@ namespace TuDienVL.User
         protected void Page_Load(object sender, EventArgs e)
         {
             FormsAuthentication.SignOut();
+            Response.Redirect("/HomePage.aspx");
         }
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {

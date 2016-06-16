@@ -27,10 +27,12 @@ namespace TuDienVL.User
             }
             //Need to cast this to master page or include the directive in the aspx page
             //Need to cast this to master page or include the directive in the aspx page
-            Master.ButtonSearch.Click += ButtonSearch_Click;
+            Response.Redirect("/HomePage.aspx");
+            //Master.ButtonSearch.Click += ButtonSearch_Click;
         }
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {
+            this.Session["SearchTerm"] = Master.SearchTerm;
             String URL = Ultility.BuildQueryStringURL("/HomePage.aspx", Master.SearchTerm);
             Response.Redirect(URL);
         }
